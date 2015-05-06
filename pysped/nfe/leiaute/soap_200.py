@@ -113,7 +113,7 @@ class SOAPEnvio(XMLNFe):
         self.nfeDadosMsg.dados = self.envio
 
         if self.soap_action_webservice_e_metodo:
-            self._header[b'content-type'] = b'application/soap+xml; charset=utf-8; action="http://www.portalfiscal.inf.br/nfe/wsdl/' + self.webservice.encode('utf-8') + b'/' + self.metodo.encode('utf-8') + b'"'
+            self._header[b'content-type'] = b'application/soap+xml; charset=utf-8;' + self.webservice.encode('utf-8') + b'/' + self.metodo.encode('utf-8') + b'"'
         else:
             self._header[b'content-type'] = b'application/soap+xml; charset=utf-8; action="http://www.portalfiscal.inf.br/nfe/wsdl/' + self.webservice.encode('utf-8') + b'"'
 
